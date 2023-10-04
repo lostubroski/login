@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=”C:\Users\Athil Asharaf\Desktop\Projects\javascript.js”></script>
+    <script src="C:\Users\Athil Asharaf\Desktop\Projects\logout.js"></script>
+    <title>Video Listing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .video-list {
+            list-style: none;
+            padding: 0;
+        }
+        .video-list-item {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Video Listing</h2>
+        <ul class="video-list" id="video-list">
+            <li class="video-list-item">
+                <button id="logout-button" onclick="handleLogout()">Logout</button>
+                <h3>Video 1</h3>
+                <video controls>
+                    <source src="C:\Users\Athil Asharaf\Desktop\Projects\video_2022-06-11_17-41-29.mp4" type="video/mp4">
+                    
+                    Your browser does not support the video tag.
+                </video>
+            
+<button class="addToFavorites" onclick="addToFavorites({title:videoTitle,url:videoURL})">Add to Favorites</button>
+            </li>
+            <li class="video-list-item">
+                <h3>Video 2</h3>
+                <video controls>
+                    <source src="C:\Users\Athil Asharaf\Desktop\Projects\video_2022-06-11_17-41-29.mp4" type="video/mp4">
+                    
+                    Your browser does not support the video tag.
+                </video>
+                
+<button class="addToFavorites" onclick="addToFavorites({title:videoTitle,url:videoURL})">Add to Favorites</button>
+
+            </li>
+            <li class="video-list-item">
+                <h3>Video 3</h3>
+                <video controls>
+                    <source src="C:\Users\Athil Asharaf\Desktop\Projects\video_2022-06-11_17-41-29.mp4" type="video/mp4">
+                    
+                    Your browser does not support the video tag.
+                </video>
+               
+<button class="addToFavorites" onclick="addToFavorites({title:videoTitle,url:videoURL})">Add to Favorites</button>
+
+            </li>
+        
+        </ul>
+    </div>
+
+    <script>
+       
+        function playVideo(videoElement) {
+            videoElement.play();
+        }
+
+    
+        const videoItems = document.querySelectorAll('.video-list-item');
+        videoItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const video = item.querySelector('video');
+                playVideo(video);
+            });
+        });
+    </script>
+</body>
+</html>

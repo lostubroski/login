@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Favorites</title>
+</head>
+<body>
+    <h1>Favorites</h1>
+    <ul id="favorites-list">
+       
+    </ul>
+
+    <script>
+
+        const favoriteVideos = [
+            { id: 1, title: "Favorite Video 1", url: "C:/Users/Athil Asharaf/Desktop\Projects/video_2022-06-11_17-41-29.mp4" },
+            { id: 2, title: "Favorite Video 2", url: "C:/Users/Athil Asharaf/Desktop/Projects/video_2022-06-11_17-41-29.mp4" },
+           
+        ];
+
+        
+        function displayFavorites() {
+            const favoritesList = document.getElementById('favorites-list');
+
+            favoriteVideos.forEach((video) => {
+                const listItem = document.createElement('li');
+                const videoLink = document.createElement('a');
+
+                videoLink.href = video.url;
+                videoLink.textContent = video.title;
+
+                listItem.appendChild(videoLink);
+                favoritesList.appendChild(listItem);
+            });
+        }
+
+     
+        displayFavorites();
+    </script>
+</body>
+</html>
